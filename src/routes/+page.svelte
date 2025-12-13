@@ -1,30 +1,45 @@
 <script lang="ts">
 	import Header from "$lib/components/Header.svelte";
-	import { ArrowUpRight, ArrowRight } from 'lucide-svelte';
+	import { ArrowUpRight, ArrowRight, Zap, BookOpen, Users, Sparkles } from 'lucide-svelte';
 
-	const services = [
-		{ id: '01', name: 'PHOTOGRAPHY' },
-		{ id: '02', name: 'VIDEOGRAPHY' },
-		{ id: '03', name: 'STYLIST' },
-		{ id: '04', name: 'WEB DESIGN' },
-		{ id: '05', name: 'GRAPHIC DESIGN' },
-		{ id: '06', name: 'ILLUSTRATING' },
-		{ id: '07', name: 'ART DIRECTION' }
+	const features = [
+		{ id: '01', name: 'AI-POWERED GENERATION', description: 'Create complete campaign modules from simple prompts in seconds' },
+		{ id: '02', name: 'INSTANT PLAYABILITY', description: 'Every module is ready to run at your table immediately' },
+		{ id: '03', name: 'COMPLETE MODULES', description: 'NPCs, encounters, maps, loot, and story hooks included' },
+		{ id: '04', name: 'COMMUNITY SHARING', description: 'Share your modules and discover content from other DMs' },
+		{ id: '05', name: 'CUSTOMIZABLE CONTENT', description: 'Edit and adapt any generated content to fit your campaign' },
+		{ id: '06', name: 'TIME SAVING', description: 'Reduce prep time from hours to minutes' }
 	];
 
-	const team = [
-		{ name: 'KRISTEN SKINNER', role: 'PHOTOGRAPHER', img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop' },
-		{ name: 'ADELE POTTS', role: 'VIDEOGRAPHER', img: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=800&auto=format&fit=crop' },
-		{ name: 'GARY HUBBARD', role: 'STYLIST', img: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=800&auto=format&fit=crop' },
-		{ name: 'LUISA OSBORN', role: 'WEB DESIGNER', img: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop' },
-		{ name: 'ANTIONE MATHIS', role: 'GRAPHIC DESIGNER', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop' },
-		{ name: 'REBEKAH MAYER', role: 'ILLUSTRATOR', img: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=800&auto=format&fit=crop' },
-		{ name: 'LARRY FISHER', role: 'PHOTOGRAPHER', img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop' },
-		{ name: 'CARMELA HERRERA', role: 'VIDEOGRAPHER', img: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop' }
+	const testimonials = [
+		{ 
+			name: 'SARAH CHEN', 
+			role: 'DUNGEON MASTER - 5 YEARS', 
+			img: '/generated/image-excited-dungeon-master-reading-through-a-1765661247352-7.webp',
+			quote: 'This tool saved me 10+ hours of prep time. My players had no idea the entire dungeon was AI-generated!'
+		},
+		{ 
+			name: 'MARCUS RODRIGUEZ', 
+			role: 'DUNGEON MASTER - 3 YEARS', 
+			img: '/generated/image-dungeon-master-sitting-at-gaming-table-w-1765661226964-0.webp',
+			quote: 'As a busy DM with a full-time job, this is a game-changer. I can finally run weekly sessions without the stress.'
+		},
+		{ 
+			name: 'EMILY WATSON', 
+			role: 'DUNGEON MASTER - 7 YEARS', 
+			img: '/generated/image-excited-dungeon-master-reading-through-a-1765661247352-7.webp',
+			quote: 'The quality is incredible. NPCs feel alive, encounters are balanced, and the story hooks are creative.'
+		}
+	];
+
+	const steps = [
+		{ number: '01', title: 'Describe Your Vision', description: 'Enter a simple prompt describing the module you need' },
+		{ number: '02', title: 'AI Generates Content', description: 'Our AI creates a complete, playable module in seconds' },
+		{ number: '03', title: 'Customize & Play', description: 'Edit as needed and bring it to your table immediately' }
 	];
 </script>
 
-<div class="min-h-screen bg-[#F4F4F2] text-[#1A1A1A] font-sans selection:bg-[#8B3A22] selection:text-white overflow-x-hidden">
+<div class="min-h-screen bg-white text-[#1A1A1A] font-sans selection:bg-primary-600 selection:text-white overflow-x-hidden">
 	<Header />
 
 	<main>
@@ -32,195 +47,235 @@
 		<section class="pt-12 md:pt-20 pb-10 px-4 md:px-8">
 			<div class="flex flex-col md:flex-row justify-between items-start mb-12 md:mb-24 relative">
 				<div class="max-w-[200px] text-[10px] leading-relaxed uppercase tracking-wide font-medium mt-2">
-					<p>At Avision, we're more than just a creative agency; we're a dynamic platform dedicated to empowering talents.</p>
+					<p>AI-powered D&D module generator that creates complete, playable campaign content instantly from your prompts.</p>
 				</div>
 				<h1 class="text-[14vw] md:text-[9rem] lg:text-[11rem] leading-[0.8] font-thin tracking-tighter text-right mt-8 md:mt-0 uppercase">
-					Where <br />
-					Creativity
+					Create <br />
+					Epic
 				</h1>
 			</div>
 
 			<!-- Hero Images -->
 			<div class="grid grid-cols-5 gap-2 md:gap-4 mb-8 h-[30vh] md:h-[50vh]">
 				<div class="overflow-hidden h-full">
-					<img src="https://images.unsplash.com/photo-1620646233562-f2a31adcc8b6?q=80&w=800&auto=format&fit=crop" alt="Hands" class="w-full h-full object-cover hover:scale-110 transition-transform duration-1000" />
+					<img src="/generated/image-dungeon-master-sitting-at-gaming-table-w-1765661226964-0.webp" alt="Dungeon Master at table" class="w-full h-full object-cover hover:scale-110 transition-transform duration-1000" />
 				</div>
 				<div class="overflow-hidden h-full">
-					<img src="https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=800&auto=format&fit=crop" alt="Silhouette" class="w-full h-full object-cover hover:scale-110 transition-transform duration-1000 filter hue-rotate-180" />
+					<img src="/generated/image-close-up-of-colorful-polyhedral-dice-on--1765661231062-1.webp" alt="D&D dice" class="w-full h-full object-cover hover:scale-110 transition-transform duration-1000" />
 				</div>
 				<div class="overflow-hidden h-full">
-					<img src="https://images.unsplash.com/photo-1570158268183-d296b2892211?q=80&w=800&auto=format&fit=crop" alt="Portrait" class="w-full h-full object-cover hover:scale-110 transition-transform duration-1000" />
+					<img src="/generated/image-hand-drawn-fantasy-map-with-dungeon-layo-1765661233793-2.webp" alt="Fantasy map" class="w-full h-full object-cover hover:scale-110 transition-transform duration-1000" />
 				</div>
 				<div class="overflow-hidden h-full">
-					<img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop" alt="Mirror" class="w-full h-full object-cover hover:scale-110 transition-transform duration-1000" />
+					<img src="/generated/image-group-of-friends-playing-dd-around-a-tab-1765661236652-3.webp" alt="D&D gaming group" class="w-full h-full object-cover hover:scale-110 transition-transform duration-1000" />
 				</div>
 				<div class="overflow-hidden h-full">
-					<img src="https://images.unsplash.com/photo-1582201942988-13e60e4556ee?q=80&w=800&auto=format&fit=crop" alt="Art" class="w-full h-full object-cover hover:scale-110 transition-transform duration-1000" />
+					<img src="/generated/image-stack-of-dd-rulebooks-and-campaign-guide-1765661239408-4.webp" alt="D&D books" class="w-full h-full object-cover hover:scale-110 transition-transform duration-1000" />
 				</div>
 			</div>
 
 			<div class="flex flex-col md:flex-row justify-between items-start">
 				<span class="text-[10px] uppercase tracking-wide font-medium mt-4 hidden md:block">Scroll</span>
 				<h1 class="text-[14vw] md:text-[9rem] lg:text-[11rem] leading-[0.8] font-thin tracking-tighter text-right w-full uppercase">
-					Meets <br />
-					Opportunity
+					Modules <br />
+					Instantly
 				</h1>
 			</div>
 		</section>
 
-		<!-- Services Section -->
-		<section class="py-20 md:py-32" id="services">
+		<!-- Features Section -->
+		<section class="py-20 md:py-32 bg-gray-50" id="features">
 			<div class="flex justify-center mb-16 md:mb-24">
-				<span class="text-[10px] font-bold uppercase tracking-widest">Services</span>
+				<span class="text-[10px] font-bold uppercase tracking-widest">Features</span>
 			</div>
 
 			<div class="border-t border-gray-300">
-				{#each services as service}
-					<div class="group border-b border-gray-300 py-6 md:py-10 px-4 md:px-8 flex items-center justify-between hover:bg-white transition-colors cursor-pointer">
-						<span class="text-[10px] font-medium text-gray-500 w-8 md:w-12">/{service.id}</span>
-						<h2 class="text-3xl md:text-6xl lg:text-7xl font-thin tracking-tight group-hover:italic transition-all duration-300 uppercase">{service.name}</h2>
-						<div class="flex items-center gap-1 text-[10px] font-medium uppercase opacity-0 group-hover:opacity-100 transition-opacity translate-x-[-10px] group-hover:translate-x-0 duration-300">
+				{#each features as feature}
+					<div class="group border-b border-gray-300 py-6 md:py-10 px-4 md:px-8 flex flex-col md:flex-row items-start md:items-center justify-between hover:bg-white transition-colors cursor-pointer">
+						<span class="text-[10px] font-medium text-gray-500 w-8 md:w-12 mb-2 md:mb-0">/{feature.id}</span>
+						<div class="flex-1 md:px-8">
+							<h2 class="text-2xl md:text-5xl lg:text-6xl font-thin tracking-tight group-hover:text-primary-600 transition-all duration-300 uppercase mb-2">{feature.name}</h2>
+							<p class="text-xs md:text-sm text-gray-600 max-w-2xl">{feature.description}</p>
+						</div>
+						<div class="flex items-center gap-1 text-[10px] font-medium uppercase opacity-0 group-hover:opacity-100 transition-opacity translate-x-[-10px] group-hover:translate-x-0 duration-300 mt-2 md:mt-0">
 							<ArrowUpRight size={12} />
-							Talents
+							Learn More
 						</div>
 					</div>
 				{/each}
 			</div>
 		</section>
 
-		<!-- Team Section -->
-		<section class="py-20 px-4 md:px-8 bg-[#F4F4F2]" id="talents">
+		<!-- How It Works Section -->
+		<section class="py-20 px-4 md:px-8 bg-white" id="how-it-works">
 			<div class="flex flex-col md:flex-row justify-between items-start mb-16 md:mb-24">
-				<h2 class="text-4xl md:text-6xl font-light tracking-tight mb-8 md:mb-0 uppercase">Avision Team</h2>
+				<h2 class="text-4xl md:text-6xl font-light tracking-tight mb-8 md:mb-0 uppercase">How It Works</h2>
 				<div class="max-w-xs text-[10px] leading-relaxed uppercase tracking-wide font-medium text-right md:text-left">
-					<p>Our team consists of the most creative people from all over the world. For them, this is not just a job, it is what they live by.</p>
+					<p>From prompt to playable module in seconds. Our AI handles the heavy lifting so you can focus on running an amazing game.</p>
 				</div>
 			</div>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-12 md:gap-y-16">
-				{#each team as member}
-					<div class="group cursor-pointer">
-						<div class="aspect-[3/4] overflow-hidden mb-4 bg-gray-200">
-							<img src={member.img} alt={member.name} class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-20">
+				{#each steps as step}
+					<div class="group">
+						<div class="text-6xl md:text-8xl font-thin text-primary-600 mb-6 opacity-30 group-hover:opacity-100 transition-opacity">
+							{step.number}
 						</div>
-						<h3 class="text-xs font-bold uppercase tracking-wide mb-1">{member.name}</h3>
-						<p class="text-[10px] text-gray-500 uppercase tracking-wide mb-3">{member.role}</p>
-						<div class="inline-flex items-center gap-1 text-[10px] font-medium uppercase opacity-0 group-hover:opacity-100 transition-opacity">
-							<ArrowUpRight size={10} />
-							Explore
-						</div>
+						<h3 class="text-xl md:text-2xl font-medium uppercase tracking-tight mb-4">{step.title}</h3>
+						<p class="text-sm text-gray-600 leading-relaxed">{step.description}</p>
 					</div>
 				{/each}
-				
-				<!-- Join Us Card -->
-				<div class="flex flex-col justify-between h-full min-h-[300px] border border-gray-300 p-8 bg-[#F4F4F2] hover:bg-white transition-colors cursor-pointer group">
-					<div class="flex justify-center items-center flex-1">
-						<ArrowRight size={48} class="text-gray-300 group-hover:text-black transition-colors" />
-					</div>
+			</div>
+
+			<!-- Process Visualization -->
+			<div class="bg-gray-50 rounded-2xl p-8 md:p-12">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 					<div>
-						<h3 class="text-xs font-bold uppercase tracking-wide mb-1 leading-relaxed">We always welcome<br/>new talents!</h3>
-						<div class="inline-flex items-center gap-1 text-[10px] font-medium uppercase mt-4">
-							<ArrowUpRight size={10} />
-							Join Us
+						<h3 class="text-2xl md:text-4xl font-light tracking-tight mb-6 uppercase">Example Prompt</h3>
+						<div class="bg-white border border-gray-200 rounded-lg p-6 mb-6">
+							<p class="text-sm italic text-gray-700">"Create a haunted mansion module for level 5 characters with a mystery to solve and a ghostly villain."</p>
 						</div>
+						<div class="flex items-start gap-3 text-xs text-gray-600">
+							<Sparkles size={16} class="text-primary-600 mt-1" />
+							<p>AI generates complete module with NPCs, encounters, maps, treasure, and story hooks in under 30 seconds.</p>
+						</div>
+					</div>
+					<div class="overflow-hidden rounded-lg">
+						<img src="/generated/image-gaming-table-setup-with-battle-mat-minia-1765661253115-9.webp" alt="Gaming table setup" class="w-full h-full object-cover" />
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- Studio Section -->
-		<section class="py-20 px-4 md:px-8" id="studio">
+		<!-- Testimonials Section -->
+		<section class="py-20 px-4 md:px-8 bg-gray-50" id="testimonials">
 			<div class="flex flex-col lg:flex-row mb-16 gap-12 lg:gap-24">
 				<div class="flex-1">
-					<h2 class="text-4xl md:text-6xl font-light tracking-tight uppercase">Avision Studio</h2>
+					<h2 class="text-4xl md:text-6xl font-light tracking-tight uppercase">Loved by DMs</h2>
 				</div>
 				<div class="flex-1">
-					<h2 class="text-3xl md:text-5xl font-light tracking-tight mb-8 text-left uppercase leading-tight">The place where<br/>ideas are born</h2>
+					<h2 class="text-3xl md:text-5xl font-light tracking-tight mb-8 text-left uppercase leading-tight">Saving hours<br/>every week</h2>
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-[10px] leading-relaxed uppercase tracking-wide font-medium">
-						<p>Avision is a creative agency dedicated to providing a platform for talented photographers, videographers & other talents to showcase their work and connect with clients.</p>
-						<p>At Avision, we believe in the power of collaboration and are committed to providing a seamless and efficient process for both clients and team members. As a commission-based agency paid by clients, we offer a simple and transparent pricing structure that allows clients to view team member portfolios, get quotations, and book photography studio spaces, all through our automated systems and proper procedures.</p>
+						<p>Dungeon Masters across the world are using DND to create engaging campaign content without spending hours on prep work.</p>
+						<p>From one-shots to full campaigns, our AI-powered generator helps DMs focus on what matters most: creating memorable experiences for their players.</p>
 					</div>
-					<a href="#about" class="inline-flex items-center gap-1 text-[10px] font-medium uppercase mt-8 hover:opacity-60 transition-opacity">
+					<a href="#start" class="inline-flex items-center gap-1 text-[10px] font-medium uppercase mt-8 hover:opacity-60 transition-opacity">
 						<ArrowUpRight size={10} />
-						About
+						Start Creating
 					</a>
 				</div>
 			</div>
 
-			<div class="flex flex-col md:flex-row gap-4 h-[50vh] md:h-[70vh]">
-				<div class="w-full md:w-[60%] h-full bg-gray-200 overflow-hidden">
-					<img src="https://images.unsplash.com/photo-1596236560753-43f5ec316045?q=80&w=1200&auto=format&fit=crop" alt="Studio" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-				</div>
-				<div class="w-full md:w-[40%] h-full flex flex-col gap-4">
-					<div class="flex-1 bg-gray-200 overflow-hidden">
-						<img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=800&auto=format&fit=crop" alt="Studio Interior" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+				{#each testimonials as testimonial}
+					<div class="bg-white rounded-lg p-8 group hover:shadow-lg transition-shadow">
+						<div class="aspect-square overflow-hidden mb-6 bg-gray-200 rounded-lg">
+							<img src={testimonial.img} alt={testimonial.name} class="w-full h-full object-cover" />
+						</div>
+						<p class="text-sm text-gray-700 mb-6 italic leading-relaxed">"{testimonial.quote}"</p>
+						<h3 class="text-xs font-bold uppercase tracking-wide mb-1">{testimonial.name}</h3>
+						<p class="text-[10px] text-gray-500 uppercase tracking-wide">{testimonial.role}</p>
 					</div>
-					<div class="flex-1 flex gap-4">
-						<div class="flex-1 bg-gray-200 overflow-hidden">
-							<img src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=600&auto=format&fit=crop" alt="Studio Detail" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+				{/each}
+			</div>
+		</section>
+
+		<!-- About Section -->
+		<section class="py-20 px-4 md:px-8 bg-white" id="about">
+			<div class="max-w-6xl mx-auto">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+					<div>
+						<h2 class="text-4xl md:text-6xl font-light tracking-tight mb-8 uppercase">About DND</h2>
+						<div class="space-y-4 text-sm text-gray-700 leading-relaxed">
+							<p>DND is revolutionizing how Dungeon Masters create campaign content. We understand that prep time is the biggest barrier to running great D&D sessions.</p>
+							<p>Our AI-powered module generator creates complete, playable content in seconds - from NPCs and encounters to maps and story hooks. Everything you need to run an amazing session, instantly.</p>
+							<p>Starting with D&D players, we're capturing the $15B tabletop gaming market through AI-generated modules and community sharing. Join thousands of DMs who are already saving hours every week.</p>
 						</div>
-						<div class="flex-1 bg-gray-200 overflow-hidden">
-							<img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=600&auto=format&fit=crop" alt="Studio Detail" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-						</div>
+					</div>
+					<div class="overflow-hidden rounded-lg">
+						<img src="/generated/image-dungeon-master-behind-dm-screen-with-lap-1765661241933-5.webp" alt="DM with laptop" class="w-full h-full object-cover" />
+					</div>
+				</div>
+
+				<!-- Stats -->
+				<div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-12 border-t border-gray-200">
+					<div class="text-center">
+						<div class="text-4xl md:text-5xl font-light text-primary-600 mb-2">10+</div>
+						<div class="text-xs uppercase tracking-wide text-gray-600">Hours Saved</div>
+					</div>
+					<div class="text-center">
+						<div class="text-4xl md:text-5xl font-light text-primary-600 mb-2">1000s</div>
+						<div class="text-xs uppercase tracking-wide text-gray-600">Modules Created</div>
+					</div>
+					<div class="text-center">
+						<div class="text-4xl md:text-5xl font-light text-primary-600 mb-2">30s</div>
+						<div class="text-xs uppercase tracking-wide text-gray-600">Generation Time</div>
+					</div>
+					<div class="text-center">
+						<div class="text-4xl md:text-5xl font-light text-primary-600 mb-2">100%</div>
+						<div class="text-xs uppercase tracking-wide text-gray-600">Playable Content</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
 		<!-- CTA Section -->
-		<section class="py-32 px-4 md:px-8 bg-[#8B3A22] text-white text-center">
-			<span class="text-[10px] font-medium uppercase tracking-widest mb-6 block opacity-80">Let's Create Together</span>
+		<section class="py-32 px-4 md:px-8 bg-primary-600 text-white text-center" id="start">
+			<span class="text-[10px] font-medium uppercase tracking-widest mb-6 block opacity-80">Ready to Save Time?</span>
 			<h2 class="text-4xl md:text-6xl lg:text-8xl font-thin tracking-tight mb-12 uppercase">
-				We'd love to <br />
-				work with you
+				Start Creating <br />
+				Epic Modules
 			</h2>
-			<a href="#contact" class="inline-block bg-[#1A1A1A] text-white px-10 py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-[#1A1A1A] transition-colors">
-				Contact
+			<a href="#pricing" class="inline-block bg-white text-primary-600 px-10 py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-gray-100 transition-colors">
+				Get Started Free
 			</a>
 		</section>
 
 		<!-- Bottom Gallery -->
 		<div class="grid grid-cols-2 md:grid-cols-5 h-[60vh]">
 			<div class="overflow-hidden">
-				<img src="https://images.unsplash.com/photo-1515462277126-2dd0c162007a?q=80&w=800&auto=format&fit=crop" alt="Dancer" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+				<img src="/generated/image-close-up-of-colorful-polyhedral-dice-on--1765661231062-1.webp" alt="D&D dice" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
 			</div>
 			<div class="overflow-hidden">
-				<img src="https://images.unsplash.com/photo-1550614000-4b9519e0037a?q=80&w=800&auto=format&fit=crop" alt="Legs" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+				<img src="/generated/image-fantasy-character-miniatures-arranged-on-1765661244389-6.webp" alt="Miniatures" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
 			</div>
 			<div class="overflow-hidden">
-				<img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop" alt="Veil" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700 filter hue-rotate-90" />
+				<img src="/generated/image-hand-drawn-fantasy-map-with-dungeon-layo-1765661233793-2.webp" alt="Fantasy map" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
 			</div>
 			<div class="overflow-hidden">
-				<img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=800&auto=format&fit=crop" alt="Pillows" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+				<img src="/generated/image-dd-player-character-sheet-with-dice-and--1765661250280-8.webp" alt="Character sheet" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
 			</div>
 			<div class="overflow-hidden hidden md:block">
-				<img src="https://images.unsplash.com/photo-1595665593673-bf1ad72905c0?q=80&w=800&auto=format&fit=crop" alt="Red Dress" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+				<img src="/generated/image-group-of-friends-playing-dd-around-a-tab-1765661236652-3.webp" alt="Gaming group" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
 			</div>
 		</div>
 
 		<!-- Footer Marquee -->
-		<div class="overflow-hidden py-6 border-b border-gray-200">
+		<div class="overflow-hidden py-6 border-b border-gray-200 bg-white">
 			<div class="whitespace-nowrap animate-marquee flex">
-				<span class="text-4xl md:text-6xl lg:text-8xl font-thin tracking-tight mx-4 uppercase">Creativity meets opportunity — Where creativity meets opportunity — Where creativity meets opportunity — </span>
-				<span class="text-4xl md:text-6xl lg:text-8xl font-thin tracking-tight mx-4 uppercase">Creativity meets opportunity — Where creativity meets opportunity — Where creativity meets opportunity — </span>
+				<span class="text-4xl md:text-6xl lg:text-8xl font-thin tracking-tight mx-4 uppercase">Create Epic Modules Instantly — AI-Powered D&D Content — Create Epic Modules Instantly — </span>
+				<span class="text-4xl md:text-6xl lg:text-8xl font-thin tracking-tight mx-4 uppercase">Create Epic Modules Instantly — AI-Powered D&D Content — Create Epic Modules Instantly — </span>
 			</div>
 		</div>
 	</main>
 
-	<footer class="px-4 md:px-8 py-12 text-[10px] font-medium uppercase tracking-wide">
+	<footer class="px-4 md:px-8 py-12 text-[10px] font-medium uppercase tracking-wide bg-white">
 		<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-12 md:gap-8">
 			<div class="flex flex-col gap-3">
-				<a href="#studio" class="hover:opacity-60">Studio</a>
-				<a href="#book" class="hover:opacity-60">Book</a>
-				<a href="#talents" class="hover:opacity-60">Talents</a>
-				<a href="#services" class="hover:opacity-60">Services</a>
-				<a href="#gallery" class="hover:opacity-60">Gallery</a>
+				<a href="#features" class="hover:opacity-60">Features</a>
+				<a href="#how-it-works" class="hover:opacity-60">How It Works</a>
+				<a href="#testimonials" class="hover:opacity-60">Testimonials</a>
+				<a href="#about" class="hover:opacity-60">About</a>
+				<a href="#pricing" class="hover:opacity-60">Pricing</a>
 			</div>
 
 			<div class="text-left md:text-center">
-				<p class="text-xl md:text-3xl font-normal tracking-tight mb-2">+965 97315182</p>
-				<p class="text-lg md:text-2xl font-normal tracking-tight mb-6">INFO@AVISIONKW.COM</p>
-				<p class="text-lg tracking-widest">KUWAIT</p>
+				<p class="text-lg md:text-2xl font-normal tracking-tight mb-6">HELLO@DNDMODULES.AI</p>
+				<div class="flex gap-4 justify-center">
+					<a href="https://reddit.com/r/DnD" target="_blank" class="hover:text-primary-600 transition-colors">Reddit</a>
+					<a href="#twitter" class="hover:text-primary-600 transition-colors">Twitter</a>
+					<a href="#discord" class="hover:text-primary-600 transition-colors">Discord</a>
+				</div>
 			</div>
 
 			<div class="flex flex-col gap-3 text-left md:text-right">
@@ -230,11 +285,11 @@
 		</div>
 
 		<div class="flex flex-col md:flex-row justify-between items-center mt-20 pt-8 border-t border-gray-200 text-[10px] text-gray-400 gap-4">
-			<p>©AVISION STUDIO. ALL RIGHT RESERVRED</p>
+			<p>©2024 DND MODULE GENERATOR. ALL RIGHTS RESERVED</p>
 			<div class="flex items-center gap-1">
-				<span class="text-black text-lg font-bold tracking-tight">AVISION</span>
+				<span class="text-primary-600 text-lg font-bold tracking-tight">DND</span>
 			</div>
-			<p>DESIGNED BY VALMAX</p>
+			<p>AI-POWERED D&D CONTENT</p>
 		</div>
 	</footer>
 </div>
